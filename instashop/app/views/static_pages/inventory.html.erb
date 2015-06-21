@@ -1,2 +1,13 @@
-<h1>StaticPages#inventory</h1>
-<p>Find me in app/views/static_pages/inventory.html.erb</p>
+<% provide(:title, "Inventory") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | MY Insta_shop</title>
+  </head>
+  <body>
+    <h1>Inventory List</h1>
+    <p>
+      This will be the inventory list.
+    </p>
+  </body>
+</html>

@@ -1,2 +1,13 @@
-<h1>StaticPages#order</h1>
-<p>Find me in app/views/static_pages/order.html.erb</p>
+<% provide(:title, "Order") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | MY Insta_shop</title>
+  </head>
+  <body>
+    <h1>Order List</h1>
+    <p>
+      This will be the order page.
+    </p>
+  </body>
+</html>
