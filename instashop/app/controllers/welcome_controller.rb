@@ -3,9 +3,6 @@ class WelcomeController < ApplicationController
     @user = User.new
   end
   
-  def new
-    
-  end
 
   def show
     @user = User.find(params[:id])
