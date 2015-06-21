@@ -1,0 +1,41 @@
+<div class="col-xs-4 well" id="user_new">
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+    <button type="submit" class="btn btn-success">Sign up</button>
+  <% end %>
+</div>
+
+<div class="col-xs-8" id="user_new_marketing">
+  <h1>SALES MANAGEMENT APP</h1>
+  
+  <p class="lead">Need help to manage your sales and keep track of inventory? We can:</p>
+  
+  <ul>
+    <li>Manage your product inventory</li>
+    <li>Keep track of the sales</li>
+    <li>Do sales analysis so you can plan better in the future</li>
+    <li>Basically, help you manage your business</li>
+  </ul>
+  
+  <p></p>
+  
+  <blockquote></blockquote>
+  
+  <p> </p>
+</div>
