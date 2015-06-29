@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  get 'inventory' => 'inventory#new'
+
+  get 'inventory/show' => 'inventory#show'
+
+  get 'inventory/update'
+
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,9 +26,8 @@ Rails.application.routes.draw do
 
   
   resources :users
-  
-  get 'products' => 'users#inventory'
-  get 'showproducts' => 'users#inventory_show'
+  resources :inventories
+
   
   namespace :admin do
     resources :users

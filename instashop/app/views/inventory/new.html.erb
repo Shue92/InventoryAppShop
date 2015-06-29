@@ -1,6 +1,6 @@
 <div>
   <h1>Inventory</h1>
-  <%= form_for (@inventory) do |f| %>
+  <%= form_for @inventories do |f| %>
     <div class="form-group">
       <label>Product ID</label>
       <%= f.text_field :product_id, class: "form-control" %>
@@ -30,6 +30,6 @@
       <%= f.text_field :quantity_left, class: "form-control" %>
     </div>
     
-    <button type="submit" class="btn btn-success">Sign up</button>
+    <button type="submit" class="btn btn-success">Add</button>
   <% end %>
 </div>
