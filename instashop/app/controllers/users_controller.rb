@@ -25,5 +25,22 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+   
+   
+   
+  
+  def inventory
+    @inventory = Inventory.new
+    @inventory.save
+    flash[:success] = "Product successfully added!"
+    redirect_to showproducts_url
+  end
+   
+  def inventory_show
+    @inventory = Inventory.find(params[:product_id])
+  end
+   
+   
+   
     
 end

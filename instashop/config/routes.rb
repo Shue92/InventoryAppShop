@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   
   resources :users
   
+  get 'products' => 'users#inventory'
+  get 'showproducts' => 'users#inventory_show'
+  
   namespace :admin do
     resources :users
   end
