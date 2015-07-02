@@ -8,7 +8,7 @@ class InventoriesController < ApplicationController
         
     if @inventories.save
         flash[:success] = "Product Successfully Added!"
-        render plain: params[:inventory]
+        render params[:inventory]
     else
         render 'new'
     end
