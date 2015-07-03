@@ -12,11 +12,7 @@ Rails.application.routes.draw do
   
   get 'welcome/show'
  
-  get 'static_pages/home'
-
-  get 'static_pages/inventory'
-
-  get 'static_pages/order'
+ 
 
   
   resources :users
