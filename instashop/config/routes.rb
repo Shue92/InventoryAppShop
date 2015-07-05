@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   
   get 'welcome/show'
  
- 
-
+  get 'login' => 'users#login' 
+  get 'signup' => 'users#create'
   
   resources :users
   resources :inventories
