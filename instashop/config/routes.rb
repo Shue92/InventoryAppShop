@@ -19,7 +19,12 @@ Rails.application.routes.draw do
   resources :inventories
   resources :sessions
   
-  get 'login' => 'sessions#new'
+  
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  
+ 
   get 'signup' => 'users#new'
   get 'inventory_add' => 'inventories#new'
   
