@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   
 
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,17 +12,16 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'users#new'
   
-  get 'welcome/show'
+
  
-  get 'login' => 'users#login' 
-  get 'signup' => 'users#create'
   
   resources :users
   resources :inventories
+  resources :sessions
   
-  
-  
-
+  get 'login' => 'sessions#new'
+  get 'signup' => 'users#new'
+  get 'inventory_add' => 'inventories#new'
   
   namespace :admin do
     resources :users

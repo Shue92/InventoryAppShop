@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome Aboard, Matey!"
         redirect_to @user
     else
-        render 'show'
+        render 'new'
     end
   end
 
