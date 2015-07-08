@@ -39,9 +39,21 @@
 <body>
     
     <div class="container">
+      <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "MY Insta_shop", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   '#' %></li>
+            <li><%= link_to "Inventory",'#' %></li>
+            <li><%= link_to "Order List",'#' %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
       <%= yield %>
-      
-   
     </div>
 </body>
 </html>
