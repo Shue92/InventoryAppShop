@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 9.99
+  description: MyText
+  quantity: 1
+  this: MyString
+  product: MyString
+  requires: MyString
+  shipping: false
+
+two:
+  name: MyString
+  price: 9.99
+  description: MyText
+  quantity: 1
+  this: MyString
+  product: MyString
+  requires: MyString
+  shipping: false
