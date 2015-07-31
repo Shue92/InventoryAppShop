@@ -1,29 +1,31 @@
-<% provide(:title, 'Product Edit') %>
-<h1>Product Edit</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for (@product) do |f| %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :price %>
-      <%= f.text_field :price %>
-
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-
-      <%= f.label :quantity %>
-      <%= f.text_field :quantity %>
-      
-      <%= f.label :shipping, class: "checkbox inline" do %>
-      <span>This product requires shipping</span>
-      <%= f.check_box :shipping %>
-      <% end  %>
+<div class="col-xs-4 well" id="product_new">
+  <h1>Product Inventory</h1>
+  
+  <%= form_for @product do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Price</label>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Description</label>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Quantity</label>
+      <%= f.text_field :quantity, class: "form-control" %>
+    </div>
+    
+    <%= f.label :shipping, class: "checkbox inline" do %>
+        <%= f.check_box :shipping %>
+        <span>This product requires shipping.</span>
+      <% end %>
 
       <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>
-
-    </div>
-  </div>
