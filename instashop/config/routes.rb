@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'users#new'
   resources :inventories
-  resources :orders
   resources :sessions
   
   get    'login'   => 'sessions#new'
