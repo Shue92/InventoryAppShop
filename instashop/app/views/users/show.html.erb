@@ -2,14 +2,9 @@
 <% provide(:title, @user.name) %>
 <h1>Welcome to Inventory Management App</h1>
 <div id="Welcome New User">
-    
     <center>
          <%= @user.name %>, <%= @user.email %>
     </center>
-    
-   
-    
 </div>
-
 
 <p><%= link_to "Inventory", inventory_add_path %></p>
