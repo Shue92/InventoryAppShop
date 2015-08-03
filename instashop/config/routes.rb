@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
   
-<<<<<<< HEAD
-  get 'static_pages/home'
-  get 'static_pages/inventory'
-  get 'static_pages/order'
-=======
 
-  
->>>>>>> 1f23676235411444b964d54bcca442e062b45185
+
 
  
 
