@@ -1,24 +1,35 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
+  get 'orders/new'
+
+  get 'products/new'
+
+=======
+>>>>>>> 80180c943b1b5019f6a46ec009315a71e964d1a1
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'users#new'
-  resources :inventories
-  resources :sessions
-  resources :users
-  resources :orders
   
-  get    'login'   => 'sessions#new'
+  root 'users#new'
+  
+  resources :users, :products, :sessions
+  
+  get    'login/new'   => 'sessions#new'
+  get 'login' => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  get 'signup' => 'users#new'
-  get 'inventory_add' => 'inventories#new'
-  get 'order_new' => 'orders#new'
+  
+  get    'users/new'   => 'users#new'
+  post   'users'   => 'users#create'
+  
   
   namespace :admin do
+    resources :users
   end
+  
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
