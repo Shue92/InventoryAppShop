@@ -7,16 +7,17 @@ Rails.application.routes.draw do
   root 'users#new'
   resources :inventories
   resources :sessions
+  resources :users
+  resources :orders
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get 'signup' => 'users#new'
   get 'inventory_add' => 'inventories#new'
-  get 'order_new' => 'order#new'
+  get 'order_new' => 'orders#new'
   
   namespace :admin do
-  resources :users
   end
   
   # Example of regular route:
