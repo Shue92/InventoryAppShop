@@ -4,7 +4,19 @@
 
 <div id="Product(s) Updated">
 
-<h1>Your Products</h1>
 
+<% if @inventories.blank? %>
+<p>You have no product</p>
+<% else %>
+<p>Your current product(s) in the system</p>
+<ul id = "inventory">
+    <% @inventories.each do |c|%>
+    <li><%= link_to c.name, {:action => 'show'} %></li>
+    <% end %>
+</ul>
+<% end %>
+<p> link_to "Add New Products", inventory_add_path</p>
+
+    
     
 </div>
