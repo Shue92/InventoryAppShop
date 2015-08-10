@@ -1,44 +1,48 @@
-
-div class="col-xs-4 well">
+<div class="col-xs-4 col-sm-5 col-md-5 well">
   <h1>Order Form</h1>
-  <%= form_for(@order) do |f| %>
+  <%= form_for @order do |f| %>
     <div class="form-group">
       <label>Name</label>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.text_field :product_name, class: "form-control" %>
     </div>
     <div class="form-group">
-      <label>Email</label>
-      <%= f.text_field :email, class: "form-control" %>
+      <label>Quantity</label>
+      <%= f.text_field :quantity_sold, class: "form-control" %>
     </div>
     <div class="form-group">
-      <label>Password</label>
-      <%= f.password_field :password, class: "form-control" %>
+      <label>Price</label>
+      <%= f.text_field :selling_price, class: "form-control" %>
     </div>
     <div class="form-group">
-      <label>Confirm Password</label>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <label>Total Price</label>
+      <%= f.text_field :total_price, class: "form-control" %>
     </div>
-    <button type="submit" class="btn btn-success">Sign up</button>
-     
-    <p>Already a Member?<%= link_to 'Login', login_url%></p>
-        
-        
-      
-    
   <% end %>
 </div>
 
-<div class="col-xs-8" id="user_new_marketing">
-  <h1>SALES MANAGEMENT APP</h1>
-  
-  <p class="lead">Need help to manage your sales and keep track of inventory? We can:</p>
-  
-  <ul>
-    <li>Manage your product inventory</li>
-    <li>Keep track of the sales</li>
-    <li>Do sales analysis so you can plan better in the future</li>
-    <li>Basically, we help you manage your business</li>
-  </ul>
-  
-
+<h1>Enter shipping details here....</h1>
+<div class="col-xs-4 col-sm-5 col-md-5 ">
+  <%= form_for @order do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :customer_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <%= f.text_field :customer_add, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Contact No.</label>
+      <%= f.password_field :customer_contact, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <%= f.password_field :customer_email, class: "form-control" %>
+    </div>
+      <label>Payment</label>
+      <%= f.check_box :customer_payment, class: "form-control" %><label>Bank Transfer</label>
+    <div class="form-group">
+    </div>
+  <% end %>  
+  <button type="submit" class="btn btn-success">Confirm Order</button>
 </div>
