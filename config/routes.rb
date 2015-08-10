@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
+
   get 'orders/new'
 
   get 'products/new'
 
-=======
->>>>>>> 80180c943b1b5019f6a46ec009315a71e964d1a1
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
