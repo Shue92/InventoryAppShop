@@ -1,2 +1,50 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<div class="col-xs-4 col-sm-5 col-md-5 well">
+  <h1>Order Form</h1>
+  <%= form_for @order do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :product_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Quantity</label>
+      <%= f.text_field :quantity_sold, class: "form-control" %>
+      <button type="onclick">+</button>
+      <button type="onclick">-</button>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <%= f.text_field :selling_price, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Total Price</label>
+      <%= f.text_field :total_price , class: "form-control" %>
+    </div>
+  <% end %>
+</div>
+
+<h1>Enter shipping details here....</h1>
+<div class="col-xs-4 col-sm-5 col-md-5 ">
+  <%= form_for @order do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :customer_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <%= f.text_field :customer_add, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Contact No.</label>
+      <%= f.password_field :customer_contact, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <%= f.password_field :customer_email, class: "form-control" %>
+    </div>
+      <label for="customer_payment">Payment Type :</label>
+      <%= f.check_box :customer_payment %>Bank Transfer
+    <div class="form-group">
+    </div>
+  <% end %>  
+  <button type="submit" class="btn btn-success">Confirm Order</button>
+</div>
