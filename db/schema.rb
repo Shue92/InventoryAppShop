@@ -11,30 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805143208) do
-
-  create_table "inventories", force: :cascade do |t|
-    t.integer  "product_id"
-    t.string   "product_name"
-    t.integer  "unit_price"
-    t.integer  "selling_price"
-    t.integer  "original_quantity"
-    t.integer  "quantity_sold"
-    t.integer  "quantity_left"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
+ActiveRecord::Schema.define(version: 20150813105243) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "product_name"
-    t.integer  "selling_price"
+    t.decimal  "selling_price"
     t.integer  "quantity_sold"
     t.string   "customer_name"
     t.string   "customer_add"
     t.integer  "customer_contact"
-    t.string   "customer_email"
-    t.string   "customer_payment"
+    t.boolean  "customer_payment"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.decimal  "total_price"
