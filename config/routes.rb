@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   
 
+  devise_for :admins
   root 'users#new'
   resources :products
   resources :sessions
@@ -36,8 +37,7 @@ Rails.application.routes.draw do
   get 'order_new' => 'orders#new'
  
   
-  namespace :admin do
-  end
+
   
   
   
