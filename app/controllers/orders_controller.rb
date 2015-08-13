@@ -9,6 +9,17 @@ class OrdersController < ApplicationController
   end
   
   def create
+    @order = Order.new(user_params)
+    if @order.save
+      flash[:success] = "Order has been saved"
+      redirect_to @order
+    else
+      render 'new'
+    end
+  end
+  
+  def edit
+    @order = Order.find(params[:id])
   end
   
   def update
