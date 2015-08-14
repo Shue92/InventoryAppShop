@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    before_save :set_admin
     before_save { email.downcase! }
     validates :name, presence: true, length: { maximum: 50 }
   
@@ -35,7 +36,11 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
-    
+   
+  private
+  def set_admin
+    self.admin = User.count == 0
+  end 
     
     
     
