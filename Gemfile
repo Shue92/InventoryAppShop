@@ -40,7 +40,7 @@ gem 'kaminari'
 # gem 'capistrano-rails', group: :development
 gem 'carrierwave'
 
-gem 'will_paginate',           '3.0.7'
+gem "will_paginate", "~> 3.0.4" 
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'faker'
 
