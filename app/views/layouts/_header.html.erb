@@ -27,13 +27,17 @@
         <%  if @user %>
           <% if @user.has_role?('Admin')  %>
             <p>I'm Admin!</p>
+            <p><%= link_to 'Logout', logout_path %></p>
           <% elsif @user.has_role?('Staff')  %>
             <p>I'm Staff!</p>
+            <p><%= link_to 'Logout', logout_path %></p>
           <% elsif @user.has_role?('Customer')  %>
             <p>I'm Customer!</p>
+            <p><%= link_to 'Logout', logout_path %></p>
           <% end  %>
           <% else %>
           <p>Saya tak login</p>
+         
         <% end  %>
       </ul>
     </div>
