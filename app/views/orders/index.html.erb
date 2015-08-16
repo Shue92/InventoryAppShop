@@ -1,13 +1,18 @@
 <h1>Your List of Orders</h1>
 
-<%= will_paginate %>
+<% if @order.blank? %>
+  <p>You have no orders</p>
+<% else %>
+  <p>Your current order(s) in the system</p>
+  <ul id = "order">
+    <%= will_paginate %>
+      <% @order.each do |c|%>
+        <li> <%= link_to c.name, {:action => 'show'}%></li>
+      <% end %>
+    <%= will_paginate %>
+  </ul>
+<% end %>
 
-<ul class="orders">
-  <% @order.each do |order| %>
-    <li>
-      <%= link_to order.name, order %>
-    </li>
-  <% end %>
-</ul>
 
-<%= will_paginate %>
+
+

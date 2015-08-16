@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
-  
+   before_action :admin_user, only: [:index, :edit, :update]
   
   def new
    @order = Order.new
   end
   
   def show
-    @order = Order.find(params[:id])
+    @order =  Order.find(params[:id])
   end
   
   def create
@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
   end
   
   def index
+    @order = Order.all
     @order = Order.paginate(page: params[:page])
   end
   
@@ -49,5 +50,12 @@ class OrdersController < ApplicationController
     params.require(:orders).permit(:product_id, :product_name,:selling_price,:quantity_sold,:total_price,
                                    :customer_name,:customer_add,:customer_email,:customer_contact,:customer_payment)
   end
+  
+   def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+   end
   
 end

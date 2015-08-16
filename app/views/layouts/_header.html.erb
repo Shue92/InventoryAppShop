@@ -24,6 +24,17 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <%  if @user %>
+          <% if @user.has_role?('Admin')  %>
+            <p>I'm Admin!</p>
+          <% elsif @user.has_role?('Staff')  %>
+            <p>I'm Staff!</p>
+          <% elsif @user.has_role?('Customer')  %>
+            <p>I'm Customer!</p>
+          <% end  %>
+          <% else %>
+          <p>Saya tak login</p>
+        <% end  %>
       </ul>
     </div>
   </div>
