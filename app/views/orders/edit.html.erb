@@ -1,3 +1,5 @@
+<h1> Edit Customer Order </h1>
+
 <div class="col-xs-4 col-sm-5 col-md-5 well">
   <h1>Order Form</h1>
   <%= form_for @order do |f| %>
@@ -35,16 +37,16 @@
     </div>
     <div class="form-group">
       <label>Contact No.</label>
-      <%= f.password_field :customer_contact, class: "form-control" %>
+      <%= f.text_field :customer_contact, class: "form-control" %>
     </div>
     <div class="form-group">
       <label>Email</label>
-      <%= f.password_field :customer_email, class: "form-control" %>
+      <%= f.text_field :customer_email, class: "form-control" %>
     </div>
       <label for="customer_payment">Payment Type :</label>
       <%= f.check_box :customer_payment %>Bank Transfer
     <div class="form-group">
     </div>
   <% end %>  
-  <button type="submit" class="btn btn-success">Confirm Order</button>
+  <button type="submit" class="btn btn-primary">Save changes</button>
 </div>

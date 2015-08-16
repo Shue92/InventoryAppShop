@@ -1,0 +1,13 @@
+<h1>Your List of Orders</h1>
+
+<%= will_paginate %>
+
+<ul class="orders">
+  <% @order.each do |order| %>
+    <li>
+      <%= link_to order.name, order %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
