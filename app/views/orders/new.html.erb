@@ -8,8 +8,6 @@
     <div class="form-group">
       <label>Quantity</label>
       <%= f.text_field :quantity_sold, class: "form-control" %>
-      <button type="onclick">+</button>
-      <button type="onclick">-</button>
     </div>
     <div class="form-group">
       <label>Price</label>
@@ -20,6 +18,7 @@
       <%= f.text_field :total_price , class: "form-control" %>
     </div>
   <% end %>
+   
 </div>
 
 <h1>Enter shipping details here....</h1>
@@ -35,16 +34,17 @@
     </div>
     <div class="form-group">
       <label>Contact No.</label>
-      <%= f.password_field :customer_contact, class: "form-control" %>
+      <%= f.text_field :customer_contact, class: "form-control" %>
     </div>
     <div class="form-group">
       <label>Email</label>
-      <%= f.password_field :customer_email, class: "form-control" %>
+      <%= f.text_field :customer_email, class: "form-control" %>
     </div>
       <label for="customer_payment">Payment Type :</label>
-      <%= f.check_box :customer_payment %>Bank Transfer
+      <p></n><%= f.check_box :customer_payment %>Bank Transfer</p>
     <div class="form-group">
     </div>
   <% end %>  
   <button type="submit" class="btn btn-success">Confirm Order</button>
 </div>
+

@@ -30,11 +30,19 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'devise'
 
+gem 'cancancan', '~> 1.10'
+
+gem 'kaminari'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem "will_paginate", "~> 3.0.4" 
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

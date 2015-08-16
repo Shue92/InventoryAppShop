@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+    belongs_to :role
+    #before_action :logged_in_user, only: [:edit, :update]
+    #before_action :correct_user,   only: [:edit, :update]
+    #before_save :set_admin
     before_save { email.downcase! }
     validates :name, presence: true, length: { maximum: 50 }
   
@@ -6,7 +10,7 @@ class User < ActiveRecord::Base
                                     
                                     uniqueness: { case_sensitive: false }
     has_secure_password
-    validates :password, length: { minimum: 3 }
+    validates :password, length: { minimum: 3 }, on: :create
     
     # Returns the hash digest of the given string.
   def User.digest(string)
@@ -35,8 +39,25 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+  
+  def has_role?(role_name)
+     self.role == Role.where(name: role_name).first
+  end
+   
+  private
     
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end  
     
-    
+  # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end  
     
 end
