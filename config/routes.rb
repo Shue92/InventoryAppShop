@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   
 
+
   root 'users#new'
   resources :products
   resources :sessions
@@ -28,16 +29,16 @@ Rails.application.routes.draw do
     resources :users
   end
   
+  
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'logout'  => 'sessions#destroy'
   get 'signup' => 'users#new'
   get 'product_add' => 'products#new'
   get 'order_new' => 'orders#new'
  
   
-  namespace :admin do
-  end
+
   
   
   
