@@ -29,8 +29,9 @@ Rails.application.routes.draw do
     resources :users
   end
   
+  
   get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#show'
+  post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get 'signup' => 'users#new'
   get 'product_add' => 'products#new'
