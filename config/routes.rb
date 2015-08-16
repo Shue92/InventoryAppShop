@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
 
-  devise_for :admins
+
   root 'users#new'
   resources :products
   resources :sessions
@@ -29,8 +29,8 @@ Rails.application.routes.draw do
     resources :users
   end
   
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
+  get    'login'   => 'users#new'
+  post   'login'   => 'users#show'
   delete 'logout'  => 'sessions#destroy'
   get 'signup' => 'users#new'
   get 'product_add' => 'products#new'
