@@ -1,0 +1,9 @@
+<% @products.each do |p| %>
+	Name: <%= p.name %><br>
+	Desc: <%= p.description %><br>
+	Price: <%= p.price %><br>
+	Qty: <%= p.quantity %><br>
+	Image: <%= p.product_image %><br>
+	Shipping: <%= p.shipping %>
+	<hr>
+<% end %>

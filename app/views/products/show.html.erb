@@ -2,15 +2,20 @@
 <div class="row">
     <aside class="col-md-4">
         <section class="product_info">
-            <h1>
+            <p>
                 
-                <%= image_tag @product.product_image %>
-                <%= @product.name %>
-                <%= @product.price %>
-                <%= @product.description %>
-                <%= @product.quantity %>
-                <%= @product.shipping %>
-            </h1>
+                Product image: <%= image_tag @product.product_image %><br>
+                
+                <br>Product name: <%= @product.name %><br>
+                
+                <br>Product price: <%= @product.price %><br>
+                
+                <br>Product desc: <%= @product.description %><br>
+                
+                <br>Product quantity: <%= @product.quantity %><br>
+                
+                <br>Product shipping: <%= @product.shipping %><br>
+            </p>
         </section>
     </aside>
 </div>
