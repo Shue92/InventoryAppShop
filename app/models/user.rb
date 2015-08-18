@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
     belongs_to :role
-    #before_action :logged_in_user, only: [:edit, :update]
-    #before_action :correct_user,   only: [:edit, :update]
-    #before_save :set_admin
+
     before_save { email.downcase! }
     validates :name, presence: true, length: { maximum: 50 }
   
