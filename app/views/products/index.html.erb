@@ -1,0 +1,28 @@
+
+  <div class="row">
+    <div class="col-md-12">
+      <% @products.each do |p| %>  
+      <div class="col-md-4">
+          
+          <div class="thumbnail">
+            <%= image_tag p.product_image, class: "img", style: " position: relative;
+                                                                  float: left;
+                                                                  width:  350px;
+                                                                  height: 250px;
+                                                                  background-position: 50% 50%;
+                                                                  background-repeat:   no-repeat;
+                                                                  background-size:     cover;"
+            %>
+            
+            <div class="caption">
+              <h3><%= p.name %></h3>
+              <p><%= p.description %></p>
+              <a href="<%= p.id  %>" class="btn btn-primary">View</a>
+              
+              
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
