@@ -8,6 +8,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
   
+  def edit
+    @product = Product.find(params[:id])
+  end
    
   def show
     @product = Product.find(params[:id])
@@ -23,6 +26,22 @@ class ProductsController < ApplicationController
         render 'new'
     end
     
+  end
+  
+  def update
+    @orders = Order.find(params[:id])
+    if @orders.update_attributes(orders_params)
+      flash[:success] = "Order updated"
+      redirect_to @orders
+    else
+      render 'edit'
+    end 
+  end
+  
+  def destroy
+    Order.find(params[:id]).destroy
+    flash[:success] = "Order deleted"
+    redirect_to orders_url
   end
 
 private
