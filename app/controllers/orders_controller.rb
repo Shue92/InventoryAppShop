@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-   before_action :admin_user, only: [:index, :edit, :update]
+
+   #before_action :admin_user, only: [:index, :edit, :update]
   
   def new
-   @order = Order.new
+   @orders = Order.new
   end
   
   def show
@@ -10,29 +11,29 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @order = Order.new(user_params)
-    if @order.save
+    @orders = Order.new(orders_params)
+    if @orders.save
       flash[:success] = "Order has been saved"
-      redirect_to @order
+      redirect_to @orders
     else
       render 'new'
     end
   end
   
   def edit
-    @order = Order.find(params[:id])
+    @orders = Order.find(params[:id])
   end
   
   def index
     @order = Order.all
-    @order = Order.paginate(page: params[:page])
+    #@order = Order.paginate(page: params[:page])
   end
   
   def update
-    @order = Order.find(params[:id])
-    if @order.update_attributes(order_params)
+    @orders = Order.find(params[:id])
+    if @orders.update_attributes(orders_params)
       flash[:success] = "Order updated"
-      redirect_to @order
+      redirect_to @orders
     else
       render 'edit'
     end 
@@ -47,8 +48,8 @@ class OrdersController < ApplicationController
   private 
   
   def orders_params
-    params.require(:orders).permit(:product_id, :product_name,:selling_price,:quantity_sold,:total_price,
-                                   :customer_name,:customer_add,:customer_email,:customer_contact,:customer_payment)
+    params.require(:order).permit(:product_name,:quantity_sold,:selling_price,:total_price,
+                                   :customer_name,:customer_add,:customer_contact,:customer_email,:customer_payment)
   end
   
    def logged_in_user

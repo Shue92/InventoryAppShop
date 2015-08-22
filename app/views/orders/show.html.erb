@@ -1,0 +1,37 @@
+<%# provide(:title, @order.customer_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="order_info">
+      <h2>Customer Details</h2>
+      <p>
+        Customer name: <%= @order.customer_name %>
+      </p>
+      <li>
+        Product name: <%= @order.product_name %>
+        </li>
+        <li>
+          Qty: <%= @order.quantity_sold %>
+        </li>
+        <li>
+          Total price:
+          <%= 
+            number_with_precision(@order.total_price, :precision => 2)
+          %>
+        </li>
+      </li>
+      <h2>Shipping Details</h2>
+      <li>
+        Customer address: <%= @order.customer_add %>
+      </li>
+        <li>Customer contact: <%= @order.customer_contact %></li>
+        <li>Customer email: <%= @order.customer_email %></li>
+        <li>Customer payment: 
+          <% if @order.customer_payment == true %>
+            Customer ni buat payment pakai bank transfer
+            <% else  %>
+            Customer ni tak buat payment tapi gila pergi send form
+          <%  end %>
+        </li>
+    </section>
+  </aside>
+</div>

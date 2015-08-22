@@ -1,13 +1,37 @@
+<head>
+  <script type="text/javascript">
+  
+  document.getElementById('order_quantity_sold').value = 0;
+  // Quantity spin buttons
+  function increase_by_one(quantity_sold) {
+  nr = parseInt(document.getElementById('order_quantity_sold').value);
+  document.getElementById('order_quantity_sold').value = nr + 1;
+  }
+ 
+  function decrease_by_one(quantity_sold) {
+  nr = parseInt(document.getElementById('order_quantity_sold').value);
+  if (nr > 0) {
+    //if( (nr - 1) > 0) {
+     document.getElementById('order_quantity_sold').value = nr - 1;
+    //}
+  }
+  } 
+  </script>
+</head>
+
+<body>
 <div class="col-xs-4 col-sm-5 col-md-5 well">
   <h1>Order Form</h1>
-  <%= form_for @order do |f| %>
+  <%= form_for @orders do |f| %>
     <div class="form-group">
       <label>Name</label>
       <%= f.text_field :product_name, class: "form-control" %>
     </div>
     <div class="form-group">
       <label>Quantity</label>
-      <%= f.text_field :quantity_sold, class: "form-control" %>
+      <%= f.text_field :quantity_sold, class: "form-control"  %>
+      <input type="button" onclick="increase_by_one('quantity_sold');" value="+">
+      <input type="button" onclick="decrease_by_one('quantity_sold');" value="-">
     </div>
     <div class="form-group">
       <label>Price</label>
@@ -17,13 +41,11 @@
       <label>Total Price</label>
       <%= f.text_field :total_price , class: "form-control" %>
     </div>
-  <% end %>
    
 </div>
 
 <h1>Enter shipping details here....</h1>
 <div class="col-xs-4 col-sm-5 col-md-5 ">
-  <%= form_for @order do |f| %>
     <div class="form-group">
       <label>Name</label>
       <%= f.text_field :customer_name, class: "form-control" %>
@@ -44,7 +66,7 @@
       <p></n><%= f.check_box :customer_payment %>Bank Transfer</p>
     <div class="form-group">
     </div>
+    <button type="submit" class="btn btn-success">Confirm Order</button>
   <% end %>  
-  <button type="submit" class="btn btn-success">Confirm Order</button>
 </div>
-
+</body>

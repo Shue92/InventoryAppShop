@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'product_add' => 'products#new'
   get 'order_new' => 'orders#new'
- 
+  post 'orders' => 'orders#create'
   
 
   

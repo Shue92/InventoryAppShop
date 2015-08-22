@@ -1,0 +1,38 @@
+<div class="col-xs-4 well" id="product_new">
+  <h1>Product Inventory</h1>
+  
+  <%= form_for @product do |f| %>
+    <div class="form-group">
+      <label>Name</label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Price</label>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Image Uploader</label>
+      <%= image_tag(@product.product_image_url) if @product.product_image? %>
+      <%= f.file_field :product_image %>
+      <%= f.hidden_field :product_image_cache %>
+    </div>
+    
+    <div class="form-group">
+      <label>Description</label>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <label>Quantity</label>
+      <%= f.text_field :quantity, class: "form-control" %>
+    </div>
+    
+    <%= f.label :shipping, class: "checkbox inline" do %>
+        <%= f.check_box :shipping %>
+        <span>This product requires shipping.</span>
+      <% end %>
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
