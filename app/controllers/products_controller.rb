@@ -29,19 +29,19 @@ class ProductsController < ApplicationController
   end
   
   def update
-    @orders = Order.find(params[:id])
-    if @orders.update_attributes(orders_params)
-      flash[:success] = "Order updated"
-      redirect_to @orders
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      flash[:success] = "Product updated"
+      redirect_to @product
     else
       render 'edit'
     end 
   end
   
   def destroy
-    Order.find(params[:id]).destroy
-    flash[:success] = "Order deleted"
-    redirect_to orders_url
+    Product.find(params[:id]).destroy
+    flash[:success] = "Product deleted"
+    redirect_to products_path
   end
 
 private
