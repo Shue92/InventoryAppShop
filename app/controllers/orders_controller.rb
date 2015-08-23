@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-   #before_action :admin_user, only: [:index, :edit, :update]
+  load_and_authorize_resource
   
   def new
    @orders = Order.new

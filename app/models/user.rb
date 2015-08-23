@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
          
   belongs_to :role
   
+  def has_role?(role_name)
+    self.role == Role.where(name: role_name).first
+  end
+  
 end

@@ -4,7 +4,7 @@
   <p>You have no orders</p>
 <% else %>
   <p>Your current order(s) in the system</p>
-<%= will_paginate %>
+<%#= will_paginate %>
 <ul class="orders">
   <% @orders.each do |order| %>
     <li>
@@ -12,6 +12,6 @@
     </li>
   <% end %>
 </ul>
-<%= will_paginate %>
+<%#= will_paginate %>
 <% end %>
 
