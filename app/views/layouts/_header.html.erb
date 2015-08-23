@@ -11,11 +11,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-       
-         
-      </ul>
+      
       
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -23,24 +19,35 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
         </form>
-      <ul class="nav navbar-nav navbar-right">
-        <%  if @user %>
-          <% if @user.has_role?('Admin')  %>
-            <p>I'm Admin!</p>
-            <p><%= link_to 'Logout', logout_path %></p>
-          <% elsif @user.has_role?('Staff')  %>
-            <p>I'm Staff!</p>
-            <p><%= link_to 'Logout', logout_path %></p>
-          <% elsif @user.has_role?('Customer')  %>
-            <p>I'm Customer!</p>
-           <%= link_to 'Logout', logout_path %>
-          <% end  %>
-          <% else %>
-          <p>Saya tak login</p>
-          <button type = "submit"><%= link_to 'Sign In', login_path %></button>
-        <% end  %>
         
-      </ul>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Dropdown 
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+            </ul>
+          </li>
+        </ul>
+        <% else %>
+          <!--user not signed in-->
+          <ul class="nav navbar-nav navbar-right">
+            <%= link_to new_user_session_url, class: "btn btn-primary login-btn" do %>Log in<% end %>
+          </ul>
+        <% end %>
+         
+        
+      
     </div>
   </div>
 </nav>
+
+<style>
+  
+  .login-btn{
+    margin-top:10px;
+  }
+  
+</style>
