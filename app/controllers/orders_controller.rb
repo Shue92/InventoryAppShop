@@ -1,9 +1,13 @@
 class OrdersController < ApplicationController
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
+  
+  def index
+    @orders = Order.all
+  end
   
   def new
-   @orders = Order.new
+   @order = Order.new
   end
   
   def show
@@ -11,29 +15,24 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @orders = Order.new(orders_params)
-    if @orders.save
+    @order = Order.new(orders_params)
+    if @order.save
       flash[:success] = "Order has been saved"
-      redirect_to @orders
+      redirect_to @order
     else
       render 'new'
     end
   end
   
   def edit
-    @orders = Order.find(params[:id])
-  end
-  
-  def index
-    @order = Order.all
-    #@order = Order.paginate(page: params[:page])
+    @order = Order.find(params[:id])
   end
   
   def update
-    @orders = Order.find(params[:id])
-    if @orders.update_attributes(orders_params)
+    @order = Order.find(params[:id])
+    if @order.update(orders_params)
       flash[:success] = "Order updated"
-      redirect_to @orders
+      redirect_to @order
     else
       render 'edit'
     end 

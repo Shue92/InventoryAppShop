@@ -16,7 +16,7 @@
                 <% end  %>
                 
                 <% if can? :show, Product %>
-                  <%= link_to edit_product_path(@product), class: "btn btn-success" do %>Buy Now<% end %>
+                  <%= link_to new_order_path(@product), class: "btn btn-success" do %>Buy Now<% end %>
                 <% end  %>
                 
               </div>
