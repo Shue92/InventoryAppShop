@@ -10,4 +10,14 @@ class User < ActiveRecord::Base
     self.role == Role.where(name: role_name).first
   end
   
+  def set_default_user_role
+    self.role = Role.where(name: "customer").first
+    self.save
+  end
+  
+  def add_role(role_name)
+    role =  Role.where(name: role_name).first
+    self.role = role unless role.blank?
+  end
+  
 end

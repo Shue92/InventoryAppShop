@@ -29,6 +29,9 @@
             <ul class="dropdown-menu">
                 <li><%= link_to edit_user_registration_path do %>Edit My Profile<% end %></li>
                 <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+                <% if can? :manage, User %>
+                  <li><%= link_to edit_user_registration_path do %><i class="fa fa-users"></i><% end %></li>
+                <% end %>
             </ul>
           </li>
         </ul>
