@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource :only => [:index, :show] 
   
+  def search
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @Products = Product.order("created_at DESC")
+    end
+  end
+  
   def index
     @products = Product.all
   end

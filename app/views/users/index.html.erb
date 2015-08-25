@@ -1,0 +1,19 @@
+
+<%= link_to "Add User", new_user_registration_path, class:"btn btn-primary btn-md" %>
+<table class="table table-bordered table-hover">
+  <tr>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Action</th>
+  </tr>
+    <% @users.each do |u| %>
+  <tr>
+    <td><%= u.email %></td>
+    <td><%= u.role_id %></td>
+    <td>
+      <a href="/user/edit/<%= u.id  %>" class="btn btn-primary">Edit</a>
+      <a href="/user/delete/<%= u.id  %>" class="btn btn-danger">Delete</a>
+    </td>
+  <% end %>    
+  </tr>
+</table>
