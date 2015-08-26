@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "products#index"
   
-  
+  get 'users/new' => "users#new"
   get 'users/' => "users#index"
   get 'user/edit/:id' => "users#edit"
   get 'user/delete/:id' => "users#destroy"
